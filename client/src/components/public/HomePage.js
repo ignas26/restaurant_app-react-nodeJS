@@ -5,16 +5,25 @@ import axios from 'axios';
 class HomePage extends React.Component{
   state={
     message:'',
-    img:''
+    img:'',
+    animate: false
   };
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get('/api/welcome').then((response)=>{
-    this.setState({message:response.data.message,
+    this.setState({
+                  message:response.data.message,
                   img:response.data.url
     })
     })
   }
+
+  redirect = ()=>{
+    this.setState({animate:true});
+    setTimeout(()=>{
+      this.props.history.push('/shop')
+    },1500)
+  };
 
   render() {
     return (
@@ -22,10 +31,16 @@ class HomePage extends React.Component{
          <h1>Restaurant</h1>
          <h2>{this.state.message}</h2>
           {this.state.img &&
-          <img src={'http://localhost:9000'+this.state.img} alt=""/>}
+
+          <img
+              className={this.state.animate ? 'animate':null}
+              onClick={this.redirect}
+              src={this.state.img} alt="logo"/>
+          }
         </div>
     );
   }
 }
 
-export default HomePage;
+
+export default HomePage
