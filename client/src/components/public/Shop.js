@@ -4,10 +4,16 @@ import Menu from './Menu';
 import Checkout from './Checkout';
 import Orders from './Orders';
 import Categories from './Categories';
-
+import {connect} from 'react-redux';
+import * as actions from '../../actions/categories';
 
 
 class Shop extends React.Component{
+
+  componentDidMount(){
+this.props.fetchCategories('Gerimai');
+  }
+
 render() {
   return (
     <div className="shop">
@@ -20,4 +26,4 @@ render() {
 }
   }
 
-  export default Shop
+  export default connect(null, actions)(Shop)

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const categories = require('./data/categories');
 
 const port = process.env.PORT || 9000;
 
@@ -14,6 +15,10 @@ res.json({
   message: 'sveiki',
   url:'/images/md.jpg'
 })
+});
+
+app.get('/api/categories', (req, res)=>{
+res.json({categories})
 });
 
 app.listen(port, ()=>{

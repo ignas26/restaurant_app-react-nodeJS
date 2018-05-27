@@ -1,6 +1,10 @@
 const active = (state='', action)=>{
-  return state
-};
+  if(action.type==='SWITCH_CATEGORY'){
+    return action.payload
+  }else{
+    return state
+  }
+  };
 
 
 export default active
