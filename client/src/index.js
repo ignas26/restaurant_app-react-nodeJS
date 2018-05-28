@@ -10,12 +10,14 @@ import menuReducer from './reducers/menuReducer';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import  'typeface-roboto';
+import {reducer as formReducer} from 'redux-form';
 
 const rootReducer = combineReducers({
   orders:ordersReducer,
   menu:menuReducer,
   categories:categoriesReducer,
-  active:activeReducer
+  active:activeReducer,
+  form:formReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

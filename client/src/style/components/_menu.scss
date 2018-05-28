@@ -2,4 +2,40 @@
     float: right;
     width: 80%;
     background: #bfbfc5;
+    margin-top: 30px;
+    a{
+        background: $color-red;
+        color:#fff;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    h2{
+        font-size: 20px;
+        color: $color-red;
+        line-height: 3;
+    }
+    .menu-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .menu-item{
+        width: 30%;
+        margin: 20px;
+        cursor: pointer;
+        img{
+            width: 100%;
+        }
+        h3{
+            font-size: 20px;
+        }
+        h4{
+            font-size: 18px;
+        }
+    }
 }

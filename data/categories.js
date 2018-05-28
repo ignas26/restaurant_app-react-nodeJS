@@ -1,15 +1,21 @@
 const categories =[
   {name:'burgers',
-  img:'/images/'
+  img:'/images/categories/burgers.png'
   },
   {name:'drinks',
-  img:'/images/'
+  img:'/images/categories/drinks.png'
+  },
+  {name:'desserts',
+  img:'/images/categories/deserts.png'
   },
   {name:'meals',
-  img:'/images/'
+  img:'/images/categories/meals.png'
+  },
+  {name:'snacks',
+    img:'/images/categories/nuggets.png'
   },
   {name:'wraps',
-  img:'/images/'
+  img:'/images/categories/wraps.png'
   }
 ];
 

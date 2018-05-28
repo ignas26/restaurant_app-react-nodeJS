@@ -1,9 +1,15 @@
 .order{
     height: 80px;
     width: 85%;
-    background: #ee9aa2;
     border-top: 2px solid $color-red;
     position:absolute;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    img{
+        height: 60px;
+        margin: 5px;
+    }
 }

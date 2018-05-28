@@ -1,5 +1,8 @@
 const menu = (state=[], action)=>{
-  return state
+  switch (action.type){
+    case 'FETCH_MENU': return [...action.payload.menu];
+    default : return state
+  }
 };
 
 
