@@ -1,14 +1,2 @@
-User:terminatorius13, address: 15 
-User:aaa, address: aaa 
-name: aa 
-
-  address: aa 
- 
-  phone: aa 
-
-  orders: 
-
-  Apple Pie 1 
-Chocolate Ice Cream 1.8 
 
   

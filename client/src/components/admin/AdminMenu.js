@@ -1,8 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/categories';
+import {Field, reduxForm} from 'redux-form';
+import axios from 'axios';
 
 class AdminMenu extends React.Component{
+state={
+  message:'',
+  item:[]
+};
+
+
+  addProduct = (values) =>{
+  axios.post('/api/admin/additem', values).then((res)=>{
+    console.log(res.data.message);
+this.setState({message:res.data.message})
+  })
+  };
+
   render(){
     const categories = this.props.categories.map((item, i)=>{
       return (
@@ -39,6 +54,12 @@ class AdminMenu extends React.Component{
           <ul>
             {categories}
           </ul>
+          <form onSubmit={this.props.handleSubmit(this.addProduct)}>
+            <Field name="name" component="input" type="text"></Field>
+            <Field name="price" component="input" type="number"></Field>
+          <button type="submit">Add</button>
+          </form>
+          <h2>{this.state.message}</h2>
           <div className="menu-list">
             {items}
           </div>
@@ -54,5 +75,9 @@ const mapStateToProps= (state)=>{
     active:state.active
   }
 };
+
+AdminMenu=reduxForm({
+  form:'menu'
+})(AdminMenu);
 
 export default connect(mapStateToProps, actions)(AdminMenu)

@@ -1,5 +1,5 @@
 {
-  "name": "maktduona",
+  "name": "restaurant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "body-parser": "^1.18.3",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
-    "i": "^0.3.6"
+    "i": "^0.3.6",
+    "mongoose": "^5.1.3"
   }
 }
