@@ -1,0 +1,68 @@
+.admin{
+    aside{
+        float: left;
+        width: 20%;
+        height: 100vh;
+        box-sizing: border-box;
+        border-right: 1px solid $color-orange;
+        a{
+            background: white;
+            border: 1px solid $color-orange;
+            color: #000;
+            padding: 20px 0;
+            display: block;
+        }
+        .active{
+            background: $color-orange;
+            color: #000;
+        }
+    }
+
+.admin-menu, .admin-order{
+    float: right;
+    width: 80%;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    background: lighten($color-red, 30%);
+}
+
+li{
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 15px 0;
+    flex: 1;
+}
+
+.active-cat{
+    background: $color-red;
+    color: #ffffff;
+}
+.menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item{
+    width: 20%;
+    margin: 20px;
+    cursor: pointer;
+    img{
+        width: 100%;
+    }
+    h3{
+        font-size: 20px;
+    }
+    h4{
+        font-size: 18px;
+    }
+}
+h5{
+    color: $color-red;
+}
+}

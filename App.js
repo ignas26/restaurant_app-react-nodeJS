@@ -30,7 +30,18 @@ app.get('/api/menu', (req,res)=>{
 });
 
 app.post('/api/orders', (req, res)=>{
-  const order = `User:${req.body.name}, address: ${req.body.address} \n`;
+  const {name, address, phone, orders} = req.body;
+  const ordersString = orders.reduce((total, item)=>{
+    return total + `${item.name} ${item.price} \n`
+  },'');
+  const order =
+  `name: ${name} \n
+  address: ${address} \n 
+  phone: ${phone} \n
+  orders: \n
+  ${ordersString}
+  `;
+
   fs.appendFile('order.txt', order, (err)=>{
     if (err) console.log(err);
   });

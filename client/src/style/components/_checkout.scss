@@ -1,0 +1,54 @@
+.checkout{
+    .wrapper{
+        width:50%;
+        margin:auto;
+        margin-top:10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .back, .total{
+        width:40%;
+        background: $color-orange;
+        padding:5px 10px;
+        font-size:20px;
+        border-radius: 4px;
+    }
+    .total{
+
+    }
+    input{
+        display: block;
+        width:100%;
+        margin-top:30px;
+        height:30px;
+        font-size:20px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid $color-orange;
+        &::placeholder{
+            font-size:20px;
+            color: #999;
+            font-weight:300;
+        }
+    }
+    form{
+        width:100%;
+    }
+    button{
+        border:1px solid $color-orange;
+        font-size:20px;
+        border-radius: 4px;
+        display: block;
+        width:100%;
+        margin-top:30px;
+        line-height:30px;
+        cursor: pointer;
+        transition: .2s;
+        outline: none;
+        &:hover{
+            background: $color-orange;
+            color: #000;
+        }
+    }
+}

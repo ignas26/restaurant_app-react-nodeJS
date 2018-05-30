@@ -1,10 +1,18 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import axios from 'axios';
+import {connect} from 'react-redux';
+
 
 let Checkout = (props)=>{
   const getValues = (values)=>{
-  axios.post('/api/orders', values)
+    const order={
+        name:values.name,
+        address:values.address,
+        phone:values.phone,
+        orders:props.orders
+    };
+  axios.post('/api/orders', order)
   };
 
 const {handleSubmit} = props;
@@ -28,6 +36,10 @@ Checkout = reduxForm({
   form: 'contact'
 })(Checkout);
 
+const mapStateToProps = (state)=>{
+return{
+  orders:state.orders
+}
+};
 
-
-export default Checkout
+export default connect(mapStateToProps)(Checkout)
