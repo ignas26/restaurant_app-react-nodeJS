@@ -3,6 +3,8 @@ const router = express.Router();
 const fs = require('fs');
 const categories = require('../data/categories');
 const menu = require ('../data/menu');
+const Item = require('../models/itemModel');
+
 
 
 router.get('/api/welcome', (req, res)=>{
@@ -15,8 +17,14 @@ router.get('/api/welcome', (req, res)=>{
 router.get('/api/categories', (req, res)=>{
   res.json({categories})
 });
-router.get('/api/menu', (req,res)=>{
-  res.json({menu})
+
+router.get('/api/menu', async (req,res)=>{
+  try {
+    const menu = await Item.find({});
+    res.send({menu: menu})
+  } catch (err){
+    console.log(err);
+  }
 });
 
 router.post('/api/orders', (req, res)=>{

@@ -7,4 +7,10 @@ return async function (dispatch){
 }
 }
 
+export function addItem(item){
+    return{
+      type:'ADD_ITEM',
+      payload:item
+  }
+}
 

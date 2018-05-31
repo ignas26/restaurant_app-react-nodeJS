@@ -9,7 +9,11 @@ name:{
 price:{
   type:Number,
   required:true
-}
+},
+  category:{
+  type:String,
+  required:true
+  }
 });
 
 module.exports = mongoose.model('items', itemSchema);
