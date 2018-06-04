@@ -2,23 +2,37 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actionsCat from '../../actions/categories';
 import * as actionsMenu from '../../actions/menu';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import axios from 'axios';
+import Dropzone from 'react-dropzone';
 const actions = {...actionsCat, ...actionsMenu};
+
 
 class AdminMenu extends React.Component{
 state={
   message:'',
-  item:[]
+  item:[],
+  file:''
 };
 
+uploadImage = (files)=>{
+this.setState({file:files[0]})
+};
 
   addProduct = (values) =>{
-    values.category = this.props.active;
-  axios.post('/api/admin/additem', values).then((res)=>{
+    const formData = new FormData();
+    formData.append('name', values.name);
+    formData.append('price', values.price);
+    formData.append('category', this.props.active);
+    formData.append('itemimage', this.state.file);
+
+  axios.post('/api/admin/additem', formData).then((res)=>{
 this.setState({message:res.data.message});
-const {name, price, category} = res.data;
-    this.props.addItem({name, price, category})
+const {name, price, category, img} = res.data;
+
+this.props.addItem({name, price, category, img:img});
+    this.setState({file:''});
+    this.props.dispatch(reset('menu'));
   })
   };
 
@@ -59,12 +73,28 @@ const {name, price, category} = res.data;
             {categories}
           </ul>
           {this.props.active &&
+          <div>
+
+            <Dropzone
+                style={{
+                  width:'120px',
+                  height:'120px',
+                  margin:'auto',
+                  backgroundImage:`url(${this.state.file.preview})`,
+                  backgroundSize:'cover',
+                  backgroundPosition:'center',
+                  border: '1px solid red'
+                }}
+                onDrop={this.uploadImage}>
+              <p>drop item image here</p>
+            </Dropzone>
           <form onSubmit={this.props.handleSubmit(this.addProduct)}>
-            <Field name="name" component="input" type="text"></Field>
-            <Field name="price" component="input" type="number"></Field>
+            <Field autoComplete="off" name="name" component="input" type="text"></Field>
+            <Field autoComplete="off" name="price" component="input" type="number"></Field>
             <button type="submit">Add</button>
           </form>
-          }
+          </div>
+            }
           <h2>{this.state.message}</h2>
           <div className="menu-list">
             {items}

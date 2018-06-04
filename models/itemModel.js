@@ -13,6 +13,10 @@ price:{
   category:{
   type:String,
   required:true
+  },
+  img:{
+  type:String,
+  required:'you must upload item image'
   }
 });
 
