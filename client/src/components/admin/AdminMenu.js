@@ -28,9 +28,9 @@ this.setState({file:files[0]})
 
   axios.post('/api/admin/additem', formData).then((res)=>{
 this.setState({message:res.data.message});
-const {name, price, category, img} = res.data;
+const {name, price, category, img, _id} = res.data;
 
-this.props.addItem({name, price, category, img:img});
+this.props.addItem({name, price, category, img, _id});
     this.setState({file:''});
     this.props.dispatch(reset('menu'));
   })
@@ -58,7 +58,10 @@ this.props.addItem({name, price, category, img:img});
             <h3>{item.name}</h3>
             <img src={item.img} alt=""/>
             <h4>{item.price}</h4>
-            <h5>remove</h5>
+            <h5 onClick={()=>this.props.removeItem(item._id)}
+            >
+              remove
+            </h5>
           </div>
       )
     });
