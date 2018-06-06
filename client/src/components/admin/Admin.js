@@ -5,10 +5,29 @@ import Menu from './AdminMenu';
 import Orders from './AdminOrders';
 import * as menuActions from '../../actions/menu';
 import * as catActions from '../../actions/categories';
-const actions = {...menuActions, ...catActions};
-
+import * as ordersActions from '../../actions/orders';
+import io from 'socket.io-client';
+const actions = {
+  ...menuActions,
+  ...catActions,
+  ...ordersActions
+};
 
 class Admin extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.socket = io('http://localhost:9000');
+    this.socket.on('connect', function(){
+      console.log('connect to server');
+    });
+    this.socket.on('order', function (data){
+      console.log(data);
+      props.addActiveOrder(data)
+    })
+  }
+
+
   componentDidMount(){
   this.props.fetchMenu();
   this.props.fetchCategories();
@@ -24,6 +43,7 @@ class Admin extends React.Component{
   <NavLink to="/admin/menu" activeClassName="active">
     Menu
   </NavLink>
+  <div onClick={()=>this.socket.emit('test', 'message')}>socket tryout</div>
 </aside>
   <Switch>
   <Route exact path="/admin/orders" component={Orders}/>

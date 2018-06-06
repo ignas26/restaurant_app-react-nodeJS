@@ -7,6 +7,7 @@ import ordersReducer from './reducers/ordersReducer';
 import activeReducer from './reducers/activeReducer';
 import categoriesReducer from './reducers/categoriesReducer';
 import menuReducer from './reducers/menuReducer';
+import activeOrderReducer from './reducers/activeOrderReducer';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import  'typeface-roboto';
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   menu:menuReducer,
   categories:categoriesReducer,
   active:activeReducer,
+  activeOrders:activeOrderReducer,
   form:formReducer
 });
 

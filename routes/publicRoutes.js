@@ -28,10 +28,19 @@ router.get('/api/menu', async (req,res)=>{
 });
 
 router.post('/api/orders', (req, res)=>{
+  console.log('new (world) order');
+
   const {name, address, phone, orders} = req.body;
+
+  const io = req.app.get('socketio');
+  io.emit('order', req.body);
+
+
+
   const ordersString = orders.reduce((total, item)=>{
     return total + `${item.name} ${item.price} \n`
   },'');
+
   const order =
       `name: ${name} \n
   address: ${address} \n 

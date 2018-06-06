@@ -1,4 +1,24 @@
 .admin{
+    .admin-orders{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+    .active-order{
+        width: 200px;
+        margin: 15px;
+        min-height: 200px;
+        border: 1px solid $color-orange;
+        border-radius: 5px;
+        h3{
+            font-size: 18px;
+            line-height: 1.3;
+        }
+        li{
+            font-size: 16px;
+
+        }
+    }
     aside{
         float: left;
         width: 20%;
@@ -39,25 +59,26 @@
         font-weight: 300;
     }
 }
-ul{
-    display: flex;
-    justify-content: space-around;
-    background: lighten($color-red, 30%);
+.admin-menu{
+    ul{
+        display: flex;
+        justify-content: space-around;
+        background: lighten($color-red, 30%);
+    }
+    li{
+        font-size: 20px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: 0.2s;
+        padding: 15px 0;
+        flex: 1;
+    }
 }
-
-li{
-    font-size: 20px;
-    font-weight: 300;
-    cursor: pointer;
-    transition: 0.2s;
-    padding: 15px 0;
-    flex: 1;
-}
-
 .active-cat{
     background: $color-red;
     color: #ffffff;
 }
+
 .menu-list{
     display: flex;
     flex-wrap: wrap;
