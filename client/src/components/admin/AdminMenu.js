@@ -26,6 +26,7 @@ this.setState({file:files[0]})
     formData.append('category', this.props.active);
     formData.append('itemimage', this.state.file);
 
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
   axios.post('/api/admin/additem', formData).then((res)=>{
 this.setState({message:res.data.message});
 const {name, price, category, img, _id} = res.data;

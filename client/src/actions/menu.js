@@ -17,6 +17,7 @@ export function addItem(item){
 
 export function removeItem(_id){
   return async function (dispatch){
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
     const response = await axios.post('/api/remove', {_id});
     dispatch({
     type:types.REMOVE_ITEM,

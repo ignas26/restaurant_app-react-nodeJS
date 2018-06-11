@@ -1,16 +1,19 @@
 import React from 'react';
 import {Route, Switch, NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
 import Menu from './AdminMenu';
 import Orders from './AdminOrders';
 import * as menuActions from '../../actions/menu';
 import * as catActions from '../../actions/categories';
-import * as ordersActions from '../../actions/orders';
+import * as orderActions from '../../actions/orders';
+import * as userActions from '../../actions/user';
+import {connect} from 'react-redux';
 import io from 'socket.io-client';
+//import jwt from 'jsonwebtoken';
 const actions = {
   ...menuActions,
   ...catActions,
-  ...ordersActions
+  ...orderActions,
+    ...userActions
 };
 
 class Admin extends React.Component{
@@ -25,6 +28,15 @@ class Admin extends React.Component{
       console.log(data);
       props.addActiveOrder(data)
     })
+  }
+
+  componentWillMount(){
+    let token = localStorage.getItem('token');
+    // if(token) token=token.split(' ')[1];
+    // console.log(token);
+    // const decoded = jwt.decode(token);
+    // console.log(decoded);
+    if(!this.props.user.name && !token) this.props.history.push('/login')
   }
 
 
@@ -44,6 +56,12 @@ class Admin extends React.Component{
     Menu
   </NavLink>
   <div onClick={()=>this.socket.emit('test', 'message')}>socket tryout</div>
+  <button
+      onClick={()=>{
+        this.props.logout();
+        this.props.history.push('/login')
+      }}>Logout
+  </button>
 </aside>
   <Switch>
   <Route exact path="/admin/orders" component={Orders}/>
@@ -54,4 +72,10 @@ class Admin extends React.Component{
   }
 }
 
-export default connect(null, actions)(Admin)
+const mapStateToProps = (state)=>{
+return{
+  user:state.user
+}
+};
+
+export default connect(mapStateToProps, actions)(Admin)
