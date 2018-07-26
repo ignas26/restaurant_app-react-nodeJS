@@ -9,7 +9,6 @@ const Item = require('../models/itemModel');
 
 router.get('/api/welcome', (req, res)=>{
   res.json({
-    message: 'sveiki',
     url:'/images/md.png'
   })
 });

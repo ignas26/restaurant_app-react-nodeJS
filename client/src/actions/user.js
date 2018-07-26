@@ -8,7 +8,7 @@ export function newUser(values){
     console.log(res.data);
     localStorage.setItem('token', 'Bearer '+res.data.token);
       dispatch({
-      types:'NEW_USER',
+      type:'NEW_USER',
       payload:res.data.name
     })
       }catch (err){

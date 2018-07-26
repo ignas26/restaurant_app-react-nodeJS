@@ -19,7 +19,7 @@ const Menu =(props)=>{
   });
   return (
       <div className="menu">
-        <h1>menu</h1>
+        <h1>M E N I U</h1>
         <h2>{props.active}</h2>
         <div className="menu-list">
           {items}

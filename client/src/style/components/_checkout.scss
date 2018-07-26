@@ -1,54 +1,54 @@
 .checkout{
-    .wrapper{
-        width:50%;
-        margin:auto;
-        margin-top:10vh;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .back, .total{
-        width:40%;
-        background: $color-orange;
-        padding:5px 10px;
-        font-size:20px;
-        border-radius: 4px;
-    }
-    .total{
-
-    }
+    border:1px solid black;
+    width:35%;
+    height:70vh;
+    margin:60px auto;
+    position:relative;
     input{
-        display: block;
-        width:100%;
-        margin-top:30px;
-        height:30px;
-        font-size:20px;
-        border-radius: 4px;
-        box-sizing: border-box;
-        border: 1px solid $color-orange;
-        &::placeholder{
-            font-size:20px;
-            color: #999;
-            font-weight:300;
-        }
+        display:block;
+        margin:30px auto;
+        width:50%;
+        height:35px;
     }
-    form{
-        width:100%;
+    input::placeholder {
+        font-style:italic;
+        padding-left:10px;
     }
     button{
-        border:1px solid $color-orange;
-        font-size:20px;
-        border-radius: 4px;
-        display: block;
-        width:100%;
-        margin-top:30px;
-        line-height:30px;
-        cursor: pointer;
-        transition: .2s;
-        outline: none;
-        &:hover{
-            background: $color-orange;
-            color: #000;
+        width:50%;
+        background:#cf251c;
+        color:white;
+        border:2px solid darkred;
+        height:35px;
+        margin-bottom: 25px;
+    }
+    .back{
+        width:10%;
+        border:1px solid black;
+        margin-left:2px;
+        margin-top:2px;
+        cursor:pointer;
+        user-select: none;
+        color:white;
+        background:gray;
+        font-style:italic;
+    }
+    .orders-checkout{
+        width:50%;
+        margin:auto;
+        button{
+            background:#cf251c;
+            color:white;
+            width:8%;
+            padding:0 5px;
+            height:20px;
+        }
+        .clean-cart{
+            width:120px;
+            margin-top:15px;
+        }
+        ul{
+            text-align:left;
         }
     }
 }

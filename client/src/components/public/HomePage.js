@@ -28,7 +28,7 @@ class HomePage extends React.Component{
   render() {
     return (
         <div className="home-page">
-         <h1>Restaurant</h1>
+          <h1>Spustelėkite logotipą norėdami užeiti</h1>
          <h2>{this.state.message}</h2>
           {this.state.img &&
 

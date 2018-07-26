@@ -20,6 +20,11 @@ this.props.fetchMenu();
 render() {
   return (
     <div className="shop">
+      <button
+          onClick={()=>{
+            this.props.history.push('/admin')
+          }}>Norėdami pridėti prekių <br></br> prisijunkite kaip admin
+      </button>
     <Route exact path="/shop" component={Menu}/>
       <Categories/>
       <Orders/>
