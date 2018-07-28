@@ -4,13 +4,13 @@
   "private": true,
   "proxy": {
     "/api": {
-      "target": "http://localhost:9000"
+      "target": "http://712075.s.dedikuoti.lt:5000"
     },
     "/images": {
-      "target": "http://localhost:9000"
+      "target": "http://712075.s.dedikuoti.lt:5000"
     },
     "/uploads": {
-      "target": "http://localhost:9000"
+      "target": "http://712075.s.dedikuoti.lt:5000"
     }
   },
   "dependencies": {

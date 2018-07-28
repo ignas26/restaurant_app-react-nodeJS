@@ -12,7 +12,7 @@ mongoose.connection
     .once('open', ()=>console.log('connected to DB'))
         .on('error', (e) => console.log('e'));
 
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 5000;
 
 
 app.use(express.static(__dirname+'/public'));
