@@ -16,9 +16,9 @@
     }
     button{
         width:50%;
-        background:#cf251c;
-        color:white;
-        border:2px solid darkred;
+        background:$color-orange;
+        color:$color-red;
+        border:2px solid $color-red;
         height:35px;
         margin-bottom: 25px;
     }

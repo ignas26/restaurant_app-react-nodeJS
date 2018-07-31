@@ -52,3 +52,40 @@
 h1{
     margin-bottom: 25px;
 }
+
+.checkout{
+    border:1px solid black;
+    width:35%;
+    height:70vh;
+    margin:60px auto;
+    position:relative;
+    input{
+        display:block;
+        margin:30px auto;
+        width:50%;
+        height:35px;
+    }
+    input::placeholder {
+        font-style:italic;
+        padding-left:10px;
+    }
+    button{
+        width:50%;
+        background:$color-orange;
+        color:$color-red;
+        border:2px solid $color-red;
+        height:35px;
+        margin-bottom: 25px;
+    }
+    .back{
+        width:10%;
+        border:1px solid black;
+        margin-left:2px;
+        margin-top:2px;
+        cursor:pointer;
+        user-select: none;
+        color:white;
+        background:gray;
+        font-style:italic;
+    }
+}

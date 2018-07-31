@@ -13,7 +13,8 @@ class Login extends React.Component {
 
 render() {
   return (
-      <div>
+      <div className="checkout">
+      <div className="wrapper">
         {this.props.user.name && <Redirect to="/admin"/>}
         <h1>{this.props.user.name}</h1>
         <form onSubmit={
@@ -38,6 +39,10 @@ render() {
         </form>
 
         <button className="spoiler" onClick={()=>this.showQuestion()}>hintas</button>
+
+        <button onClick={()=>{this.props.history.push('/shop')}}>grįžti į meniu</button>
+
+
         { this.state.show &&
             <div>
         <div className="backdrop"
@@ -53,13 +58,13 @@ render() {
             Išeiti
           </div>
         </div>
-            </div>
-}
+            </div> }
 
 
         <h2>{this.props.user.err}</h2>
       </div>
-  );
+      </div>
+  )
 }
 }
 
