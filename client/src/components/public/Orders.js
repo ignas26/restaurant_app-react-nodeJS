@@ -4,7 +4,7 @@ import * as actions from '../../actions/orders';
 
 const Orders=(props)=>{
   const orders = props.orders.map((order,i)=>{
-    return <div key={i} className="order"><img src={order.img} alt=""/><button onClick={()=>props.removeOrder(i)}>x</button></div>
+    return <div key={i} className="order"><img src={order.img} alt=""/><div className="button" onClick={()=>props.removeOrder(i)}><p>x</p></div></div>
   });
   return(
       <div>
