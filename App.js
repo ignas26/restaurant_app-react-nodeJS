@@ -3,14 +3,8 @@ const app = express();
 const bodyParser = require ('body-parser');
 const publicRoutes = require('./routes/publicRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-const mongoose = require('mongoose');
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://adminas:adminas1234@ds241530.mlab.com:41530/restaurant_db');
-mongoose.connection
-    .once('open', ()=>console.log('connected to DB'))
-        .on('error', (e) => console.log('e'));
+require('dotenv').config();
+require('./database/connectTo')();
 
 const port = process.env.PORT || 5000;
 
