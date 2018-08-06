@@ -20,7 +20,7 @@ class Admin extends React.Component{
 
   constructor(props){
     super(props);
-    this.socket = io('http://localhost:9000');
+    this.socket = io('http://712075.s.dedikuoti.lt:5000/');
     this.socket.on('connect', function(){
       console.log('connect to server');
     });

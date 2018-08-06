@@ -1,29 +1,23 @@
 .shop{
 button{
-    box-shadow:inset 0px 0px 14px 3px #276873;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
-    background-color:#599bb3;
-    border-radius:13px;
+    box-shadow:inset 0px 0px 14px 3px $color-red;
+    background-color: $color-orange;
+    border-radius:10px;
     border:1px solid #29668f;
     display:inline-block;
     cursor:pointer;
-    color:#ffffff;
+    color: whitesmoke;
     font-family:Arial;
-    font-size:12px;
-    font-weight:bold;
-    padding:11px 43px;
+    font-size:13px;
+    font-weight:700;
+    padding:11px 40px;
     text-decoration:none;
-    text-shadow:9px 1px 15px #3d768a;
+    text-shadow:9px 1px 15px $color-red;
     float: left;
-    &:hover {
-
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
-        background-color:#408c99;
-    }
+    width: 15%;
     &:active {
         position:relative;
-        top:1px;
+        top:2px;
     }
 }
 }

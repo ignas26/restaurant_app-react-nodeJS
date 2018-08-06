@@ -11,7 +11,7 @@ import activeOrderReducer from './reducers/activeOrderReducer';
 import userReducer from './reducers/userReducer';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
-import  'typeface-roboto';
+import 'typeface-roboto';
 import {reducer as formReducer} from 'redux-form';
 
 const rootReducer = combineReducers({

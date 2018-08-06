@@ -1,8 +1,8 @@
 .menu{
     float: right;
     width: 85%;
-    background: #bfbfc5;
-    margin-top: 30px;
+    background: $color-orange;
+    height: 105vh;
     a{
         background: $color-red;
         color:#fff;
@@ -25,6 +25,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        border-bottom: 1px solid #000;
     }
     .menu-item{
         width: 20%;
@@ -35,9 +36,11 @@
         }
         h3{
             font-size: 20px;
+            font-family: 'Architects-Daughter', cursive;
         }
         h4{
             font-size: 18px;
+            font-family: 'Architects-Daughter', cursive;
         }
     }
 }

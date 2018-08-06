@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import Menu from './Menu';
-//import Checkout from './Checkout';
 import Orders from './Orders';
 import Categories from './Categories';
 import {connect} from 'react-redux';
