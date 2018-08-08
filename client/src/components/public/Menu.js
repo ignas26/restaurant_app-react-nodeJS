@@ -24,7 +24,7 @@ const Menu =(props)=>{
         <div className="menu-list">
           {items}
         </div>
-        {props.orders.length>0 && <Link to="/checkout">Checkout</Link>}
+        {props.orders.length>0 && <Link to="/checkout">Kasa</Link>}
       </div>
   );
 };

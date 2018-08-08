@@ -41,9 +41,6 @@
 .admin-menu, .admin-orders {
     float: right;
     width: 80%;
-    form {
-
-    }
     input, button {
         display: block;
         font-size: 18px;
@@ -102,4 +99,14 @@
 h5{
     color: $color-red;
 }
+}
+
+.logout-btn{
+    background-color: $color-red;
+    color: $color-orange;
+    border:5px solid $color-orange;
+    margin: 10px auto;
+    width: 45%;
+    height: 50px;
+    cursor: pointer;
 }

@@ -13,7 +13,7 @@ class Login extends React.Component {
 
 render() {
   return (
-      <div className="checkout">
+      <div className="checkout-login">
       <div className="wrapper">
         {this.props.user.name && <Redirect to="/admin"/>}
         <h1>{this.props.user.name}</h1>

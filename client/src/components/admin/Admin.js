@@ -56,7 +56,7 @@ class Admin extends React.Component{
     Menu
   </NavLink>
   <div onClick={()=>this.socket.emit('test', 'message')}></div>
-  <button
+  <button className="logout-btn"
       onClick={()=>{
         this.props.logout();
         this.props.history.push('/login')

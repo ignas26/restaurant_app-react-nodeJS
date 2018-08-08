@@ -1,5 +1,4 @@
 .checkout{
-    border:1px solid black;
     width:35%;
     height:70vh;
     margin:60px auto;
@@ -15,12 +14,41 @@
         padding-left:10px;
     }
     button{
+        background:#cf251c;
+        width:30%;
+        padding:0 5px;
+        height:20px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        color: $color-orange;
+    }
+    .submit{
         width:50%;
         background:$color-orange;
-        color:$color-red;
+        color:#000000;
         border:2px solid $color-red;
         height:35px;
         margin-bottom: 25px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .reset{
+        background-color: $color-red;
+        color: $color-orange;
+        border:5px solid $color-orange;
+        margin: 20px;
+        width: 50%;
+        height: 35px;
+    }
+    a{
+        p{
+            background-color: $color-red;
+            color: $color-orange;
+            border:5px solid $color-orange;
+            margin: 0 auto;
+            width: 45%;
+            height: 20px;
+        }
     }
     .back{
         width:10%;
@@ -42,6 +70,7 @@
             width:8%;
             padding:0 5px;
             height:20px;
+            cursor: pointer;
         }
         .clean-cart{
             width:120px;
@@ -51,4 +80,16 @@
             text-align:left;
         }
     }
+}
+
+.order-msg{
+    margin-bottom: 25px;
+    font-family: 'Architects-Daughter', cursive;
+
+}
+
+.form{
+    font-family: 'Architects-Daughter', cursive;
+    font-size: 32px;
+    color: $color-red;
 }

@@ -31,7 +31,7 @@ const AdminOrders = (props)=>{
 
 const mapStateToProps = (state)=>{
 return{
-  activeOrders:state.activeOrders,
+  activeOrders:state.activeOrders
 }
 };
 

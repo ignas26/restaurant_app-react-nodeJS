@@ -1,20 +1,20 @@
 const categories =[
-  {name:'burgers',
+  {name:'burgeriai',
   img:'/images/categories/burgers.png'
   },
-  {name:'drinks',
+  {name:'gėrimai',
   img:'/images/categories/drinks.png'
   },
-  {name:'desserts',
+  {name:'desertai',
   img:'/images/categories/deserts.png'
   },
-  {name:'meals',
+  {name:'rinkiniai',
   img:'/images/categories/meals.png'
   },
-  {name:'snacks',
+  {name:'užkandžiai',
     img:'/images/categories/nuggets.png'
   },
-  {name:'wraps',
+  {name:'Suktiniai',
   img:'/images/categories/wraps.png'
   }
 ];

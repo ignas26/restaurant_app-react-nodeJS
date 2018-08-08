@@ -4,13 +4,13 @@
   "private": true,
   "proxy": {
     "/api": {
-      "target": "http://712075.s.dedikuoti.lt:5000"
+      "target": "http://712075.s.dedikuoti.lt:5000/"
     },
     "/images": {
-      "target": "http://712075.s.dedikuoti.lt:5000"
+      "target": "http://712075.s.dedikuoti.lt:5000/"
     },
     "/uploads": {
-      "target": "http://712075.s.dedikuoti.lt:5000"
+      "target": "http://712075.s.dedikuoti.lt:5000/"
     }
   },
   "dependencies": {
